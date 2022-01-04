@@ -1,16 +1,14 @@
-package com.example.demo;
-import java.math.BigDecimal;
-import java.util.*;
+package com.example.demo.bundles;
 
-//import com.google.common.collect.ImmutableMap;
-//import jdk.dynalink.Operation;
-
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class Bundles {
     static Map<String, Operation> kindMap = new HashMap<>();
+
     static {
-        kindMap.put("IMG",new IMGBundle());
+        kindMap.put("IMG", new IMGBundle());
         kindMap.put("FLAC", new FLACBundle());
         kindMap.put("VID", new VIDBundle());
     }

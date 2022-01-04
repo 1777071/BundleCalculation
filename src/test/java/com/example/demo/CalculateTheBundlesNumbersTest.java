@@ -3,15 +3,14 @@ package com.example.demo;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculationTest {
+class CalculateTheBundlesNumbersTest {
 
     @Test
-    void calculateBundlesIMG() throws Exception {
-        Calculation cc=new Calculation();
+    void calculateBundlesIMG()  {
+        CalculateTheBundlesNumbers cc=new CalculateTheBundlesNumbers();
         Map<Integer,Integer> res=new HashMap<>();
         res.put(5,0);
         res.put(10,1);
@@ -24,8 +23,8 @@ class CalculationTest {
         assertEquals(resDetails,resTest.toString());
     }
     @Test
-    void calculateBundlesVID() throws Exception {
-        Calculation ccList=new Calculation();
+    void calculateBundlesVID()  {
+        CalculateTheBundlesNumbers ccList=new CalculateTheBundlesNumbers();
         Map<Integer,Integer> res=new HashMap<>();
         res.put(3,1);
         res.put(5,2);
@@ -42,8 +41,8 @@ class CalculationTest {
         assertEquals(resDetails,resTest.toString());
     }
     @Test
-    void calculateBundlesFLAC() throws Exception {
-        Calculation ccList=new Calculation();
+    void calculateBundlesFLAC()  {
+        CalculateTheBundlesNumbers ccList=new CalculateTheBundlesNumbers();
         Map<Integer,Integer> res=new HashMap<>();
         res.put(3,0);
         res.put(6,1);

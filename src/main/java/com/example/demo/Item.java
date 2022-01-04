@@ -1,4 +1,5 @@
 package com.example.demo;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -6,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class Item {
     private int Number;
-    private String  Kinds;
+    private String Kinds;
 }

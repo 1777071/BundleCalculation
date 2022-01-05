@@ -1,14 +1,18 @@
-package com.example.demo;
+package Tian.bundlecalculator.first;
 
-//import jdk.dynalink.Operation;
 
-import com.example.demo.bundles.Bundles;
-import com.example.demo.bundles.Operation;
+
+import Tian.bundlecalculator.first.fun.analyzer.CustomersDetails;
+import Tian.bundlecalculator.first.fun.analyzer.Item;
+import Tian.bundlecalculator.first.fun.calculator.CalculatorOfTheBundlesNumbers;
+import Tian.bundlecalculator.first.fun.calculator.PriceCalculator;
+import Tian.bundlecalculator.first.utils.Bundles;
+
 
 import java.util.ArrayList;
 import java.util.Map;
 
-public class OrderProcess {
+public class OrderProcessor {
 
     public final ArrayList<String> allKinds = new ArrayList<>();
     public final ArrayList<Integer> allNumbers = new ArrayList<>();
@@ -23,12 +27,9 @@ public class OrderProcess {
             allKinds.add(bundleKinds);
             allNumbers.add(filesNumber);
 
-            Operation bundleInfo = Bundles
-                    .getKind(bundleKinds)
-                    .orElseThrow(() -> new IllegalArgumentException("Invalid Operator"));
-
-            Map<Integer, Double> processBundle = bundleInfo.applyBundles();
-            CalculateTheBundlesNumbers countPackages = new CalculateTheBundlesNumbers();
+            Bundles bb=new Bundles();
+            Map<Integer, Double> processBundle = bb.getKinds(bundleKinds);
+            CalculatorOfTheBundlesNumbers countPackages = new CalculatorOfTheBundlesNumbers();
             Map<Integer, Integer> bundlesList = countPackages.calculateBundles(item.getNumber(), processBundle);
             bundleListResult.add(bundlesList);
 

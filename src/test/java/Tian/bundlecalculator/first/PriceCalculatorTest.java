@@ -1,5 +1,6 @@
-package com.example.demo;
+package Tian.bundlecalculator.first;
 
+import Tian.bundlecalculator.first.fun.calculator.PriceCalculator;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;

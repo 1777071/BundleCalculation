@@ -1,9 +1,9 @@
-package com.example.demo;
+package Tian.bundlecalculator.first.fun.calculator;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class CalculateTheBundlesNumbers {
+public class CalculatorOfTheBundlesNumbers {
     public Map<Integer, Integer> calculateBundles(int bundleNumber, Map<Integer, Double> processBundle) {
 
         Map<Integer, Integer> res = new HashMap<>();

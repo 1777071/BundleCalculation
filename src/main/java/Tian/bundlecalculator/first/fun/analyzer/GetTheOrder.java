@@ -1,4 +1,4 @@
-package com.example.demo;
+package Tian.bundlecalculator.first.fun.analyzer;
 
 import java.util.Scanner;
 import java.util.logging.Logger;

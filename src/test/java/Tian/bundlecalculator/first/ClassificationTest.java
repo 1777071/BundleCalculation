@@ -1,5 +1,6 @@
-package com.example.demo;
+package Tian.bundlecalculator.first;
 
+import Tian.bundlecalculator.first.fun.analyzer.Classification;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

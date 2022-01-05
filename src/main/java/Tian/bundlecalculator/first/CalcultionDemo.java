@@ -1,5 +1,7 @@
-package com.example.demo;
+package Tian.bundlecalculator.first;
 
+import Tian.bundlecalculator.first.fun.analyzer.CustomersDetails;
+import Tian.bundlecalculator.first.fun.analyzer.GetTheOrder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,12 +15,12 @@ public class CalcultionDemo {
 
     public static void main(String[] args) {
         Logger log = Logger.getGlobal();
-        //SpringApplication.run(Demo4Application.class, args);
+
         GetTheOrder getTheOrder = new GetTheOrder();
         CustomersDetails custoersDetails = getTheOrder.read();
         log.info(custoersDetails.toString());
 
-        OrderProcess dealOrder = new OrderProcess();
+        OrderProcessor dealOrder = new OrderProcessor();
         dealOrder.process(custoersDetails);
 
         ArrayList<String> resKinds = dealOrder.allKinds;

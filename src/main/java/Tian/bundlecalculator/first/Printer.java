@@ -9,11 +9,13 @@ public class Printer {
 
         for (int i = 0; i < resKinds.size(); i++) {
             String kind = resKinds.get(i);
+            //The FLAC result kind is double and keep two decimal places
             if (kind.equals("FLAC")) {
                 DecimalFormat reserve=new DecimalFormat("#.00");
                 String flacValue=reserve.format(resAllPrice.get(i));
                 System.out.println(resNumber.get(i) + " " + resKinds.get(i) + " " + "$" + flacValue);
             } else {
+                //IMG and VID are int kind
                 System.out.println(resNumber.get(i) + " " + resKinds.get(i) + " " + "$" + (int) Math.round(resAllPrice.get(i)));
             }
 

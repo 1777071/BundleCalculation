@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 @Slf4j
 @SpringBootApplication
-public class CalcultionDemo {
+public class CalculationDemo {
 
     public static void main(String[] args) {
         Logger log = Logger.getGlobal();

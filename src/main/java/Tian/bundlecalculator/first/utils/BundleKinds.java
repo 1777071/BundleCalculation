@@ -11,6 +11,7 @@ public class BundleKinds {
     static final Map<Integer, Double> imgBundle = new HashMap<>();
     static final Map<Integer, Double> flacBundle = new HashMap<>();
     static final Map<Integer, Double> vidBundle = new HashMap<>();
+    //  Initial the bundle size and price
     BundleKinds(){
         imgBundle.put(5,450.0);
         imgBundle.put(10,800.0);

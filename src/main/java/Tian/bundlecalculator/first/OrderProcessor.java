@@ -1,13 +1,10 @@
 package Tian.bundlecalculator.first;
 
-
-
 import Tian.bundlecalculator.first.fun.analyzer.CustomersDetails;
 import Tian.bundlecalculator.first.fun.analyzer.Item;
 import Tian.bundlecalculator.first.fun.calculator.CalculatorOfTheBundlesNumbers;
 import Tian.bundlecalculator.first.fun.calculator.PriceCalculator;
 import Tian.bundlecalculator.first.utils.Bundles;
-
 
 import java.util.ArrayList;
 import java.util.Map;

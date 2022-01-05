@@ -48,8 +48,8 @@ public class CalculatorOfTheBundlesNumbers {
                 for (int bundle : orderBundle) {
                     //Current bundles satisfy the request
                     if (i < bundle) {
-                        Map<Integer, Integer> newVakue = updateMap(bundle, orderBundle);
-                        possibleCombination.put(i, newVakue);
+                        Map<Integer, Integer> newValue = updateMap(bundle, orderBundle);
+                        possibleCombination.put(i, newValue);
                         break;
                     } else {
                         int currentBundle = i - bundle;

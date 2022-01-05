@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Item {
-    private int Number;
-    private String Kinds;
+    private int number;
+    private String kinds;
 }

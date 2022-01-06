@@ -13,11 +13,11 @@ public class Reader {
             Scanner scan = new Scanner(System.in);
             String nextLine = scan.nextLine();
             while (nextLine != null && !nextLine.equals("")) {
-                String[] evaLine = nextLine.split("\\s+");
-                if (new Classification().evaluation(evaLine[1])) {
+                String[] currentLine = nextLine.split("\\s+");
+                if (new Classification().evaluation( currentLine[1])) {
                     Item request = new Item();
-                    request.setCategory(evaLine[1]);
-                    request.setNumber(Integer.parseInt(evaLine[0]));
+                    request.setCategory( currentLine[1]);
+                    request.setNumber(Integer.parseInt( currentLine[0]));
                     details.add(request);
                 }
                 nextLine = scan.nextLine();

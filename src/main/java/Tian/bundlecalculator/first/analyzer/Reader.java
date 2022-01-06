@@ -1,9 +1,9 @@
-package Tian.bundlecalculator.first.fun.analyzer;
+package tian.bundlecalculator.first.analyzer;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class GetTheOrder {
+public class Reader {
     public CustomersDetails read() {
         Logger log = Logger.getGlobal();
         CustomersDetails details = new CustomersDetails();
@@ -16,7 +16,7 @@ public class GetTheOrder {
                 String[] evaLine = nextLine.split("\\s+");
                 if (new Classification().evaluation(evaLine[1])) {
                     Item request = new Item();
-                    request.setKinds(evaLine[1]);
+                    request.setCategory(evaLine[1]);
                     request.setNumber(Integer.parseInt(evaLine[0]));
                     details.add(request);
                 }

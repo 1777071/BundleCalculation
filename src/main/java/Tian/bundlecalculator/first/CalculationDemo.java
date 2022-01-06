@@ -1,7 +1,7 @@
-package Tian.bundlecalculator.first;
+package tian.bundlecalculator.first;
 
-import Tian.bundlecalculator.first.fun.analyzer.CustomersDetails;
-import Tian.bundlecalculator.first.fun.analyzer.GetTheOrder;
+import tian.bundlecalculator.first.analyzer.CustomersDetails;
+import tian.bundlecalculator.first.analyzer.Reader;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -16,14 +16,14 @@ public class CalculationDemo {
     public static void main(String[] args) {
         Logger log = Logger.getGlobal();
 
-        GetTheOrder getTheOrder = new GetTheOrder();
+        Reader getTheOrder = new Reader();
         CustomersDetails custoersDetails = getTheOrder.read();
         log.info(custoersDetails.toString());
 
         OrderProcessor dealOrder = new OrderProcessor();
         dealOrder.process(custoersDetails);
 
-        ArrayList<String> resKinds = dealOrder.allKinds;
+        ArrayList<String> resCategorys = dealOrder.allCategories;
         ArrayList<Integer> resNumber = dealOrder.allNumbers;
         ArrayList<Map<Integer, Integer>> resBundle = dealOrder.bundleListResult;
 
@@ -31,7 +31,7 @@ public class CalculationDemo {
         ArrayList<Double> resAllPrice = dealOrder.allPrice;
 
         Printer resPrinter = new Printer();
-        resPrinter.printer(resNumber, resKinds, resBundle, resPrice, resAllPrice);
+        resPrinter.printer(resNumber, resCategorys, resBundle, resPrice, resAllPrice);
 
     }
 

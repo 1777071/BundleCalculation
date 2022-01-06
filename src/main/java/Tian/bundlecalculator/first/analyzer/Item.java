@@ -1,4 +1,4 @@
-package Tian.bundlecalculator.first.fun.analyzer;
+package tian.bundlecalculator.first.analyzer;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class Item {
     private int number;
-    private String kinds;
+    private String category;
 }

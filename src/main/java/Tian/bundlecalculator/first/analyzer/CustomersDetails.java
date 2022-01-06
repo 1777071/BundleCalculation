@@ -1,4 +1,4 @@
-package Tian.bundlecalculator.first.fun.analyzer;
+package tian.bundlecalculator.first.analyzer;
 
 import java.util.ArrayList;
 

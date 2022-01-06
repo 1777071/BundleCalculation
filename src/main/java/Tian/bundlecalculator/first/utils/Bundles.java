@@ -1,4 +1,4 @@
-package Tian.bundlecalculator.first.utils;
+package tian.bundlecalculator.first.utils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,14 +6,16 @@ import java.util.Map;
 
 public class Bundles {
 
-    static Map<String, Map<Integer,Double>> kindMaps = new HashMap<>();
+    static Map<String, Map<Integer, Double>> typeMaps = new HashMap<>();
+
     static {
-        kindMaps.put("IMG",new BundleKinds().getImgBundle());
-        kindMaps.put("FLAC",new BundleKinds().getFlacBundle());
-        kindMaps.put("VID",new BundleKinds().getVidBundle());
+        typeMaps.put("IMG", new BundleTypes().getImgBundle());
+        typeMaps.put("FLAC", new BundleTypes().getFlacBundle());
+        typeMaps.put("VID", new BundleTypes().getVidBundle());
     }
-    public Map<Integer,Double> getKinds(String kind){
-        return kindMaps.get(kind);
+
+    public Map<Integer, Double> getCategories(String category) {
+        return typeMaps.get(category);
     }
 
 }

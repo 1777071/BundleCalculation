@@ -1,17 +1,17 @@
-package Tian.bundlecalculator.first;
+package tian.bundlecalculator.first;
 
-import Tian.bundlecalculator.first.fun.analyzer.CustomersDetails;
-import Tian.bundlecalculator.first.fun.analyzer.Item;
-import Tian.bundlecalculator.first.fun.calculator.CalculatorOfTheBundlesNumbers;
-import Tian.bundlecalculator.first.fun.calculator.PriceCalculator;
-import Tian.bundlecalculator.first.utils.Bundles;
+import tian.bundlecalculator.first.analyzer.CustomersDetails;
+import tian.bundlecalculator.first.analyzer.Item;
+import tian.bundlecalculator.first.calculator.CalculatorOfTheBundlesNumbers;
+import tian.bundlecalculator.first.calculator.PriceCalculator;
+import tian.bundlecalculator.first.utils.Bundles;
 
 import java.util.ArrayList;
 import java.util.Map;
 
 public class OrderProcessor {
 
-    public final ArrayList<String> allKinds = new ArrayList<>();
+    public final ArrayList<String> allCategories = new ArrayList<>();
     public final ArrayList<Integer> allNumbers = new ArrayList<>();
     public final ArrayList<Map<Integer, Integer>> bundleListResult = new ArrayList<>();
     public final ArrayList<Map<Integer, Double>> priceListResult = new ArrayList<>();
@@ -19,13 +19,13 @@ public class OrderProcessor {
 
     public void process(CustomersDetails customersDetails) {
         for (Item item : customersDetails.customersRequest) {
-            String bundleKinds = item.getKinds();
+            String bundleTypes = item.getCategory();
             int filesNumber = item.getNumber();
-            allKinds.add(bundleKinds);
+            allCategories.add(bundleTypes);
             allNumbers.add(filesNumber);
 
-            Bundles bb=new Bundles();
-            Map<Integer, Double> processBundle = bb.getKinds(bundleKinds);
+            Bundles bb = new Bundles();
+            Map<Integer, Double> processBundle = bb.getCategories(bundleTypes);
             CalculatorOfTheBundlesNumbers countPackages = new CalculatorOfTheBundlesNumbers();
             Map<Integer, Integer> bundlesList = countPackages.calculateBundles(item.getNumber(), processBundle);
             bundleListResult.add(bundlesList);

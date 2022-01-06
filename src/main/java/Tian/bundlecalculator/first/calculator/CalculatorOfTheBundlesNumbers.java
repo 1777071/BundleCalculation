@@ -1,4 +1,4 @@
-package Tian.bundlecalculator.first.fun.calculator;
+package tian.bundlecalculator.first.calculator;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -71,6 +71,7 @@ public class CalculatorOfTheBundlesNumbers {
         res = orderFromLowToHigh(res);
         return res;
     }
+
     // Sort the map
     private Map<Integer, Integer> orderFromLowToHigh(Map<Integer, Integer> order) {
         TreeMap<Integer, Integer> treeMap = new TreeMap<>((o1, o2) -> o1 > o2 ? 1 : -1);

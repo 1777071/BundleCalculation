@@ -1,4 +1,4 @@
-package Tian.bundlecalculator.first.fun.analyzer;
+package tian.bundlecalculator.first.analyzer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +12,7 @@ public class Classification {
         classification.put("VID", true);
     }
 
-    public boolean evaluation(String kind) {
-        return classification.get(kind);
+    public boolean evaluation(String category) {
+        return classification.get(category);
     }
 }

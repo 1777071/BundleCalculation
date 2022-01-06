@@ -1,17 +1,17 @@
-package Tian.bundlecalculator.first;
+package tian.bundlecalculator.first;
 
-import Tian.bundlecalculator.first.fun.analyzer.Classification;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import tian.bundlecalculator.first.analyzer.Classification;
 
 class ClassificationTest {
 
     @Test
     void evaluation() {
-        Classification getClass=new Classification();
-        assertTrue(getClass.evaluation("IMG"));
-        assertTrue(getClass.evaluation("FLAC"));
-        assertTrue(getClass.evaluation("VID"));
+        Classification getClass = new Classification();
+        Assertions.assertTrue(getClass.evaluation("IMG"));
+        Assertions.assertTrue(getClass.evaluation("FLAC"));
+        Assertions.assertTrue(getClass.evaluation("VID"));
     }
+
 }

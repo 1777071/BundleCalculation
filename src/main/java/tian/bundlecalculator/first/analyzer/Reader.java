@@ -14,10 +14,10 @@ public class Reader {
             String nextLine = scan.nextLine();
             while (nextLine != null && !nextLine.equals("")) {
                 String[] currentLine = nextLine.split("\\s+");
-                if (new Classification().evaluation( currentLine[1])) {
+                if (new Classification().evaluation(currentLine[1])) {
                     Item request = new Item();
-                    request.setCategory( currentLine[1]);
-                    request.setNumber(Integer.parseInt( currentLine[0]));
+                    request.setCategory(currentLine[1]);
+                    request.setNumber(Integer.parseInt(currentLine[0]));
                     details.add(request);
                 }
                 nextLine = scan.nextLine();

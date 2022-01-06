@@ -104,7 +104,6 @@ public class CalculatorOfTheBundlesNumbers {
         int bundleCounts = 0;
         for (Map.Entry<Integer, Integer> entry : lastNumber.entrySet()) {
             bundleCounts += entry.getValue();
-            //System.out.println(entry.getValue());
         }
         return bundleCounts;
     }

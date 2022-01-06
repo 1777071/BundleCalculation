@@ -3,7 +3,7 @@ package tian.bundlecalculator.first.calculator;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class CalculatorOfTheBundlesNumbers {
+public class NumberCalculator {
     public Map<Integer, Integer> calculateBundles(int bundleNumber, Map<Integer, Double> processBundle) {
 
         Map<Integer, Integer> res = new HashMap<>();
@@ -104,7 +104,6 @@ public class CalculatorOfTheBundlesNumbers {
         int bundleCounts = 0;
         for (Map.Entry<Integer, Integer> entry : lastNumber.entrySet()) {
             bundleCounts += entry.getValue();
-            //System.out.println(entry.getValue());
         }
         return bundleCounts;
     }

@@ -1,7 +1,6 @@
 package tian.bundlecalculator.first;
 
 import org.junit.jupiter.api.Test;
-import tian.bundlecalculator.first.calculator.CalculatorOfTheBundlesNumbers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +11,7 @@ class CalculatorOfTheBundlesNumbersTest {
 
     @Test
     void calculateBundlesIMG() {
-        CalculatorOfTheBundlesNumbers cc = new CalculatorOfTheBundlesNumbers();
+        tian.bundlecalculator.first.calculator.NumberCalculator cc = new tian.bundlecalculator.first.calculator.NumberCalculator();
         Map<Integer, Integer> res = new HashMap<>();
         res.put(5, 0);
         res.put(10, 1);
@@ -27,7 +26,7 @@ class CalculatorOfTheBundlesNumbersTest {
 
     @Test
     void calculateBundlesVID() {
-        CalculatorOfTheBundlesNumbers ccList = new CalculatorOfTheBundlesNumbers();
+        tian.bundlecalculator.first.calculator.NumberCalculator ccList = new tian.bundlecalculator.first.calculator.NumberCalculator();
         Map<Integer, Integer> res = new HashMap<>();
         res.put(3, 1);
         res.put(5, 2);
@@ -46,7 +45,7 @@ class CalculatorOfTheBundlesNumbersTest {
 
     @Test
     void calculateBundlesFLAC() {
-        CalculatorOfTheBundlesNumbers ccList = new CalculatorOfTheBundlesNumbers();
+        tian.bundlecalculator.first.calculator.NumberCalculator ccList = new tian.bundlecalculator.first.calculator.NumberCalculator();
         Map<Integer, Integer> res = new HashMap<>();
         res.put(3, 0);
         res.put(6, 1);

@@ -2,7 +2,6 @@ package tian.bundlecalculator.first;
 
 import tian.bundlecalculator.first.analyzer.CustomersDetails;
 import tian.bundlecalculator.first.analyzer.Item;
-import tian.bundlecalculator.first.calculator.CalculatorOfTheBundlesNumbers;
 import tian.bundlecalculator.first.calculator.PriceCalculator;
 import tian.bundlecalculator.first.utils.Bundles;
 
@@ -26,7 +25,7 @@ public class OrderProcessor {
 
             Bundles bb = new Bundles();
             Map<Integer, Double> processBundle = bb.getCategories(bundleTypes);
-            CalculatorOfTheBundlesNumbers countPackages = new CalculatorOfTheBundlesNumbers();
+            tian.bundlecalculator.first.calculator.NumberCalculator countPackages = new tian.bundlecalculator.first.calculator.NumberCalculator();
             Map<Integer, Integer> bundlesList = countPackages.calculateBundles(item.getNumber(), processBundle);
             bundleListResult.add(bundlesList);
 

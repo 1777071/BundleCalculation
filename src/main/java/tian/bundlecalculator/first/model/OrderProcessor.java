@@ -34,9 +34,11 @@ public class OrderProcessor {
             for (Integer i : bundlesList.keySet()) {
                 priceListRes.put(i, currentBundlePrice.get(i) * processBundle.get(i));
             }
+
             priceListResult.add(priceListRes);
             allPrice.add(totalPrice(priceListRes));
         }
+
         res.put("allCategories", allCategories);
         res.put("allNumbers", allNumbers);
         res.put("bundleListResult", bundleListResult);

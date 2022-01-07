@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 public class Calculator {
     public Map<Integer, Integer> calculateBundles(int bundleNumber, Map<Integer, Double> processBundle) {
-
         Map<Integer, Integer> res = new HashMap<>();
         Set<Integer> bundleSize = processBundle.keySet();
         List<Integer> orderBundle = bundleSize.stream().sorted().collect(Collectors.toList());

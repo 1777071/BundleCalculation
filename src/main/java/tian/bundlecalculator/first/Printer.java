@@ -11,8 +11,8 @@ public class Printer {
             String type = resCategories.get(i);
             //The FLAC result type is double and keep two decimal places
             if (type.equals("FLAC")) {
-                DecimalFormat reserve = new DecimalFormat("#.00");
-                String flacValue = reserve.format(resAllPrice.get(i));
+                DecimalFormat keepTwoDecimals = new DecimalFormat("#.00");
+                String flacValue = keepTwoDecimals.format(resAllPrice.get(i));
                 System.out.println(resNumber.get(i) + " " + resCategories.get(i) + " " + "$" + flacValue);
             } else {
                 //IMG and VID are int type

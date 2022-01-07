@@ -18,10 +18,10 @@ public class OrderReader {
             while (nextLine != null && !nextLine.equals("")) {
                 String[] currentLine = nextLine.split("\\s+");
                 if (new Classification().evaluation(currentLine[1])) {
-                    OrderItem request = new OrderItem();
-                    request.setCategory(currentLine[1]);
-                    request.setNumber(Integer.parseInt(currentLine[0]));
-                    details.add(request);
+                    OrderItem currentItem = new OrderItem();
+                    currentItem.setCategory(currentLine[1]);
+                    currentItem.setNumber(Integer.parseInt(currentLine[0]));
+                    details.add(currentItem);
                 }
                 nextLine = scan.nextLine();
             }

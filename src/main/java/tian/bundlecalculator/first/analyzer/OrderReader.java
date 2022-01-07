@@ -1,12 +1,15 @@
 package tian.bundlecalculator.first.analyzer;
 
+import tian.bundlecalculator.first.model.OrderDetails;
+import tian.bundlecalculator.first.model.OrderItem;
+
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class Reader {
-    public CustomersDetails read() {
+public class OrderReader {
+    public OrderDetails read() {
         Logger log = Logger.getGlobal();
-        CustomersDetails details = new CustomersDetails();
+        OrderDetails details = new OrderDetails();
         System.out.println("Please input your request");
         System.out.println("Please use the structure '10 IMG'");
         try {
@@ -15,7 +18,7 @@ public class Reader {
             while (nextLine != null && !nextLine.equals("")) {
                 String[] currentLine = nextLine.split("\\s+");
                 if (new Classification().evaluation(currentLine[1])) {
-                    Item request = new Item();
+                    OrderItem request = new OrderItem();
                     request.setCategory(currentLine[1]);
                     request.setNumber(Integer.parseInt(currentLine[0]));
                     details.add(request);

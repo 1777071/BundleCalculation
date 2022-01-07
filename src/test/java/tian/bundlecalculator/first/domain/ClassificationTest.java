@@ -1,4 +1,4 @@
-package tian.bundlecalculator.first;
+package tian.bundlecalculator.first.domain;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

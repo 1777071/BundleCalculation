@@ -3,7 +3,7 @@ package tian.bundlecalculator.first.calculator;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class NumberCalculator {
+public class Calculator {
     public Map<Integer, Integer> calculateBundles(int bundleNumber, Map<Integer, Double> processBundle) {
 
         Map<Integer, Integer> res = new HashMap<>();
@@ -63,10 +63,8 @@ public class NumberCalculator {
                         }
                     }
                 }
-
             }
         }
-
         res.putAll(possibleCombination.get(bundleNumber));
         res = orderFromLowToHigh(res);
         return res;
@@ -100,7 +98,6 @@ public class NumberCalculator {
 
     private int lastBundleNumber(Map<Integer, Map<Integer, Integer>> possibleCombination, int lastSize) {
         Map<Integer, Integer> lastNumber = possibleCombination.get(lastSize);
-
         int bundleCounts = 0;
         for (Map.Entry<Integer, Integer> entry : lastNumber.entrySet()) {
             bundleCounts += entry.getValue();

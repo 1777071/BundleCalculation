@@ -6,6 +6,7 @@ import tian.bundlecalculator.first.domain.Bundles;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class OrderProcessor {
 
@@ -28,6 +29,7 @@ public class OrderProcessor {
             Map<Integer, Integer> bundlesList = packagesAndPrice.calculateBundles(item.getNumber(), processBundle);
             bundleListResult.add(bundlesList);
 
+            bundlesList=keySort(bundlesList);
             Map<Integer, Integer> currentBundlePrice = new HashMap<>(bundlesList);
             Map<Integer, Double> priceListRes = new HashMap<>();
 
@@ -54,5 +56,10 @@ public class OrderProcessor {
             res += entry.getValue();
         }
         return res;
+    }
+    private Map<Integer, Integer> keySort(Map<Integer, Integer> order) {
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>((o1, o2) -> o1 > o2 ? 1 : -1);
+        treeMap.putAll(order);
+        return treeMap;
     }
 }

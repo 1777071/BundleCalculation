@@ -1,11 +1,17 @@
 package tian.bundlecalculator.first.model;
 
-import java.util.ArrayList;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@Setter
 public class OrderDetails {
-    public ArrayList<OrderItem> customersRequest = new ArrayList<>();
+    private List<OrderItem> orderItems = new ArrayList<>();
 
     public void add(OrderItem request) {
-        customersRequest.add(request);
+        orderItems.add(request);
     }
 }

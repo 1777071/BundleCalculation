@@ -17,21 +17,21 @@ public class Calculator {
             possibleCombination.put(i, initialValue(bundleSize.size(), orderBundle));
         }
 
-        Set<Integer> auoqtoli = new HashSet<>(bundleSize);
+        Set<Integer> divisibleNum = new HashSet<>(bundleSize);
         for (int i = orderBundle.get(0); i <= bundleNumber; i++) {
             for (int j = bundleSize.size() - 1; j >= 0; j--) {
                 //No remains
                 //The bundle number could satisfy the request
                 if ((i - orderBundle.get(j) == 0)) {
                     possibleCombination.put(i, updateMap(i, orderBundle));
-                    auoqtoli.add(i);
+                    divisibleNum.add(i);
                     break;
                 } else {
                     //The rest could be satisfied by the bundle number
-                    if (auoqtoli.contains(i - orderBundle.get(j))) {
+                    if (divisibleNum.contains(i - orderBundle.get(j))) {
                         possibleCombination.put(i, possibleCombination.get(i - orderBundle.get(j)));
                         Map<Integer, Integer> mid = new HashMap<>(possibleCombination.get(i));
-                        auoqtoli.add(i);
+                        divisibleNum.add(i);
 
                         mid.put(orderBundle.get(j), mid.get(orderBundle.get(j)) + 1);
                         possibleCombination.put(i, mid);
@@ -40,7 +40,7 @@ public class Calculator {
                 }
             }
             //With remains
-            if (!auoqtoli.contains(i)) {
+            if (!divisibleNum.contains(i)) {
                 int lastSize = i - orderBundle.get(0);
                 int bundleCounts = lastBundleNumber(possibleCombination, lastSize);
                 Map<Integer, Integer> mid = new HashMap<>(i - orderBundle.get(0));
@@ -71,7 +71,7 @@ public class Calculator {
 
     // Sort the map
     private Map<Integer, Integer> orderFromLowToHigh(Map<Integer, Integer> order) {
-        TreeMap<Integer, Integer> treeMap = new TreeMap<>((o1, o2) -> o1 > o2 ? 1 : -1);
+        Map<Integer, Integer> treeMap = new TreeMap<>((o1, o2) -> o1 > o2 ? 1 : -1);
         treeMap.putAll(order);
         return treeMap;
     }

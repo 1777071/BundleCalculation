@@ -1,4 +1,4 @@
-package tian.bundlecalculator.first.domain;
+package tian.bundlecalculator.first.model;
 
 
 import java.util.HashMap;

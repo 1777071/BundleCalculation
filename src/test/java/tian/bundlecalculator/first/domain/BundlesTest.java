@@ -1,6 +1,7 @@
 package tian.bundlecalculator.first.domain;
 
 import org.junit.jupiter.api.Test;
+import tian.bundlecalculator.first.model.Bundles;
 
 import java.util.HashMap;
 import java.util.Map;

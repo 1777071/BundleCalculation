@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class OrderReader {
     public OrderDetails read() {
         Logger log = Logger.getGlobal();
-        OrderDetails details = new OrderDetails();
+        OrderDetails orderdetails = new OrderDetails();
         System.out.println("Please input your request");
         System.out.println("Please use the structure '10 IMG'");
         try {
@@ -21,7 +21,7 @@ public class OrderReader {
                 OrderItem currentItem = new OrderItem();
                 currentItem.setCategory(currentLine[1]);
                 currentItem.setNumber(Integer.parseInt(currentLine[0]));
-                details.add(currentItem);
+                orderdetails.add(currentItem);
                 nextLine = scan.nextLine();
             }
 
@@ -29,9 +29,9 @@ public class OrderReader {
             log.info("Please input correct format like: 10 IMG and use");
             log.warning((ex.toString()));
         }
-        details.setOrderItems(details.getOrderItems().stream().
+        orderdetails.setOrderItems(orderdetails.getOrderItems().stream().
                 filter(item -> "FLAC".equals(item.getCategory()) || "IMG".equals(item.getCategory()) || "VID".equals(item.getCategory())).collect(Collectors.toList()));
-        return details;
+        return orderdetails;
     }
 
 

@@ -24,6 +24,8 @@ public class OrderProcessor {
             Calculator packagesAndPrice = new Calculator();
             Map<Integer, Integer> bundlesList = packagesAndPrice.calculateBundles(filesNumber, processBundle);
             resList.addBundleListItem(bundlesList);
+            Map<Integer, Double> priceList = packagesAndPrice.calculatePrice(bundlesList, processBundle);
+            resList.addPriceListItem(priceList);
         });
         return resList;
     }

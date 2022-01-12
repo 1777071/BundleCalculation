@@ -1,5 +1,6 @@
 package tian.bundlecalculator.first.calculator;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -64,6 +65,7 @@ public class Calculator {
                 }
             }
         }
+
         res.putAll(possibleCombination.get(bundleNumber));
         res = orderFromLowToHigh(res);
         return res;
@@ -102,5 +104,15 @@ public class Calculator {
             bundleCounts += entry.getValue();
         }
         return bundleCounts;
+    }
+
+    public Map<Integer, Double> calculatePrice(Map<Integer, Integer> bundlesNumber, Map<Integer, Double> bundleUnitPrice) {
+        Map<Integer, Double> res = new HashMap<>();
+        bundlesNumber.forEach((itemSize, itemNumber) -> {
+                    BigDecimal number = new BigDecimal(Double.toString(itemNumber));
+                    BigDecimal price = new BigDecimal(Double.toString(bundleUnitPrice.get(itemSize)));
+                    res.put(itemSize, number.multiply(price).doubleValue());
+                });
+        return res;
     }
 }

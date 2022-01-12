@@ -1,9 +1,7 @@
 package tian.bundlecalculator.first.model;
 
-
 import java.util.HashMap;
 import java.util.Map;
-
 
 public class BundleTypes {
 

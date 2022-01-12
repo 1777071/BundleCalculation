@@ -1,19 +1,15 @@
 package tian.bundlecalculator.first;
 
-import tian.bundlecalculator.first.model.Bundles;
-
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
 public class OrderPrinter {
-    public void printer(ResList resList) {
+    public void print(ResList resList) {
         for (int i = 0; i < resList.getAllCategories().size(); i++) {
             String type = resList.getAllCategories().get(i);
-            Map<Integer, Double> priceList = new Bundles().getCategories(type);
             Map<Integer, Integer> bundlesNumber = resList.getBundleListResult().get(i);
-
-            Map<Integer, Double> totalCost = totalPrice(bundlesNumber, priceList);
+            Map<Integer, Double> totalCost = resList.getPriceListResult().get(i);
             //The FLAC result type is double and keep two decimal places
             Double theWholeCost = (totalCost.values()).stream().reduce(0.0, Double::sum);
             if (type.equals("FLAC")) {
@@ -26,12 +22,6 @@ public class OrderPrinter {
                 totalCost.forEach((itemSize, itemPrice) -> System.out.print(validateImgAndVid(bundlesNumber, itemSize, itemPrice)));
             }
         }
-    }
-
-    private Map<Integer, Double> totalPrice(Map<Integer, Integer> bundlesNumber, Map<Integer, Double> bundleUnitPrice) {
-        Map<Integer, Double> res = new HashMap<>();
-        bundlesNumber.forEach((itemSize, itemNumber) -> res.put(itemSize, itemNumber * bundleUnitPrice.get(itemSize)));
-        return res;
     }
 
     private String validateFlac(Map<Integer, Integer> bundlesNumber, int i, Double bundleCost) {

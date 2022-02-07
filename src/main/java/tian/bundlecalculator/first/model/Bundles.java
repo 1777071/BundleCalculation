@@ -3,7 +3,7 @@ package tian.bundlecalculator.first.model;
 import java.util.HashMap;
 import java.util.Map;
 
-
+//test hhhh
 public class Bundles {
 
     static Map<String, Map<Integer, Double>> typeMaps = new HashMap<>();
